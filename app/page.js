@@ -1,9 +1,8 @@
-"use client";
-
 import Link from "next/link";
 import React from "react";
 
 const HomePage = () => {
+  // console.log("server comp"); //Note: This will be logged on the server side
   return (
     <div>
       <h1 className="text-5xl font-bold mb-8">Next.js Tutorial</h1>
