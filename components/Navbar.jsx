@@ -17,7 +17,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal md:ml-8">
           {links.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="capitalize text-black-500 px-7 mx-3">
+              <Link href={link.href} className="capitalize text-black-500 px-7 mx-3 text-lg font-bold">
                 {link.label}
               </Link>
             </li>

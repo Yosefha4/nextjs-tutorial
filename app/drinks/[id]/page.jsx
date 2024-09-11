@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import Drink1 from "./randomDrink1.jpg";
+
+console.log(Drink1);
 
 const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
@@ -23,8 +26,9 @@ const DrinkItem = async ({ params }) => {
       <Link href="/drinks" className="btn btn-primary mt-8 mb-12">
         Back to drinks
       </Link>
+
+      <Image src={Drink1} alt={title} className="w-48 h-48 rounded" />
       <h1 className="text-4xl mb-8">{title}</h1>
-      {/* <Image src={imgSrc} alt={title} width={300} height={300} /> */}
     </div>
   );
 };
