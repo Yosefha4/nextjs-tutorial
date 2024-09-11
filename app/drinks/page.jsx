@@ -1,4 +1,4 @@
-const url = "https://www.hecocktaildb.com/api/json/v1/1/search.php?f=a";
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
 
 const fetchDrinks = async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -14,7 +14,7 @@ const fetchDrinks = async () => {
 
 const DrinksPage = async () => {
   const data = await fetchDrinks();
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <h1 className="text-5xl font-bold">Drinks Page</h1>
