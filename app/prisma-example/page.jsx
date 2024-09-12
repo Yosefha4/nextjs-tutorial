@@ -25,7 +25,6 @@ const PrismaExample = async () => {
         {tasks.map((task) => (
           <div key={task.id} className="flex items-center justify-between">
             <h2 className="text-xl py-2">😃{task.centent}</h2>
-            {/* {task.completed && <span className="text-gray-500">Completed</span>} */}
           </div>
         ))}
       </div>
