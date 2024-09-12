@@ -23,16 +23,21 @@ export const createTask = async (formData) => {
 };
 
 //Create a new Costum Task
-export const createTaskCustom = async (formData) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+export const createTaskCustom = async (prevState, formData) => {
+  //   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const content = formData.get("content");
-  await prisma.task.create({
-    data: {
-      content,
-    },
-  });
-  revalidatePath("/tasks");
+  try {
+    await prisma.task.create({
+      data: {
+        content,
+      },
+    });
+    revalidatePath("/tasks");
+    return { message: "Success" };
+  } catch (error) {
+    return { message: "Error creating task" };
+  }
 };
 
 //Delete a Tasks

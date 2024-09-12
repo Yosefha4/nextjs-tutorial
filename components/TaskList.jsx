@@ -17,7 +17,7 @@ const TaskList = async () => {
           <h2 className={`text-lg capitalize ${task.completed ? "line-through" : null}`}>{task.content}</h2>
 
           <div className="flex gap-6 items-center">
-            <Link href={`/tasks/${task.id}`} className="btn btn-accent btn-xs">
+            <Link href={`/tasks/${task.id}`} className="btn btn-accent btn-xs border border-black">
               edit
             </Link>
 
