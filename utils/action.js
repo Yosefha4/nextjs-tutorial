@@ -22,6 +22,19 @@ export const createTask = async (formData) => {
   revalidatePath("/tasks");
 };
 
+//Create a new Costum Task
+export const createTaskCustom = async (formData) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const content = formData.get("content");
+  await prisma.task.create({
+    data: {
+      content,
+    },
+  });
+  revalidatePath("/tasks");
+};
+
 //Delete a Tasks
 export const deleteTask = async (formData) => {
   const id = formData.get("id");
