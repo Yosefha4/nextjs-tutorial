@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import prisma from "./db";
 import { redirect } from "next/navigation";
+import { z } from "zod";
 
 //Get all Tasks
 export const getAllTasks = async () => {
@@ -27,7 +28,14 @@ export const createTaskCustom = async (prevState, formData) => {
   //   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const content = formData.get("content");
+
+  // Validate input
+  const Task = z.object({
+    content: z.string().min(5).max(255),
+  });
   try {
+    Task.parse({ content });
+
     await prisma.task.create({
       data: {
         content,
@@ -36,6 +44,7 @@ export const createTaskCustom = async (prevState, formData) => {
     revalidatePath("/tasks");
     return { message: "Success" };
   } catch (error) {
+    console.error(error);
     return { message: "Error creating task" };
   }
 };
