@@ -4,8 +4,8 @@ import React from "react";
 const links = [
   { href: "/client", label: "Client" },
   { href: "/drinks", label: "Drinks" },
-  { href: "/tasks", label: "Tasks" },
-  { href: "/query", label: "Query" },
+  { href: "/tasks", label: "tasks" },
+  { href: "/prisma-example", label: "prisma" },
 ];
 const Navbar = () => {
   return (
