@@ -16,7 +16,7 @@ const TaskList = async () => {
           key={task.id}
           className="flex justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lg shadow-lg"
         >
-          <h2 className={`text-lg capitalize ${task.completed ? "line-through" : null}`}>{task.centent}</h2>
+          <h2 className={`text-lg capitalize ${task.completed ? "line-through" : null}`}>{task.content}</h2>
 
           <div className="flex gap-6 items-center">
             <Link href={`/tasks/${task.id}`} className="btn btn-accent btn-xs">
