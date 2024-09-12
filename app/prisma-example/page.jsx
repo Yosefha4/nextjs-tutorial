@@ -3,7 +3,7 @@ import prisma from "@/utils/db";
 const prismaHanlder = async () => {
   await prisma.task.create({
     data: {
-      centent: "Task 1 Content",
+      content: "Task 1 Content",
     },
   });
 
