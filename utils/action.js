@@ -29,7 +29,7 @@ export const createTaskCustom = async (prevState, formData) => {
 
   const content = formData.get("content");
 
-  // Validate input
+  // Validate input (content)
   const Task = z.object({
     content: z.string().min(5).max(255),
   });
@@ -42,10 +42,10 @@ export const createTaskCustom = async (prevState, formData) => {
       },
     });
     revalidatePath("/tasks");
-    return { message: "Success" };
+    return { message: "success" };
   } catch (error) {
     console.error(error);
-    return { message: "Error creating task" };
+    return { message: "error" };
   }
 };
 
